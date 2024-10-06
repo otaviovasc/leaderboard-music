@@ -1,0 +1,6 @@
+<div class="text-center">
+  <h1>Welcome to Leaderboard Music</h1>
+  <% unless current_user %>
+    <%= button_to 'Login with Spotify', '/auth/spotify', method: :post, class: 'btn btn-success btn-lg mt-4' %>
+  <% end %>
+</div>

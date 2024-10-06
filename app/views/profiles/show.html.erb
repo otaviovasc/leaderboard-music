@@ -1,0 +1,11 @@
+<h2>Welcome, <%= current_user.display_name %></h2>
+<% if current_user.profile_image_url %>
+  <img src="<%= current_user.profile_image_url %>" alt="Profile Image" class="rounded-circle" width="100">
+<% end %>
+
+<h3 class="mt-4">Your Top Artists</h3>
+<div class="list-group">
+  <% @top_artists.each do |artist| %>
+    <%= link_to artist['name'], artist_path(artist['id']), class: 'list-group-item list-group-item-action' %>
+  <% end %>
+</div>
